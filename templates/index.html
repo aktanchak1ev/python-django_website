@@ -1,55 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Main Page</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %} Title Index {% endblock %}
+{% load static %}
+{% block content %}
 
+<h2>hello from index</h2>
 
-<br>
-    <br>
-        <br>
-            <br>
-        <br>
-    <br>
+<img src="{% static 'img/5.jpg' %}" alt="register">
 
-<form action="{% url 'taken_page' %}" method="POST">
-    {% csrf_token %}
-    <label>Name</label>
-    <input name="name">
-    <label>Phone</label>
-    <input name="phone">
-    <button type="submit">Send</button>
-</form>
+{% include 'index_old.html' %}
 
-
-    <br>
-        <br>
-            <br>
-        <br>
-    <br>
-<br>
-{% if object_list %}
-<table border="1">
-    <tr>
-        <th>ID</th>
-        <th>Date</th>
-        <th>Name</th>
-        <th>Phone</th>
-    </tr>
-{% for obj in object_list %}
-    <tr>
-        <th>{{ obj.id }}</th>
-        <th>{{ obj.order_dt }}</th>
-        <th>{{ obj.order_name }}</th>
-        <th>{{ obj.order_phone }}</th>
-    </tr>
-{% endfor %}
-</table>
-{% else %}
-<h2>Empty Data</h2>
-{% endif %}
-
-</body>
-</html>
+{% endblock %}

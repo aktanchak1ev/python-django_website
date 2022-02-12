@@ -1,0 +1,55 @@
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Main Page</title>
+</head>
+<body>
+
+
+<br>
+    <br>
+        <br>
+            <br>
+        <br>
+    <br>
+
+
+<form action="{% url 'taken_page' %}" method="POST" >
+
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button style="background-color:#FFFCF2; border-color:#403D39; color:#252422" type="submit">SEND</button>
+</form>
+
+
+    <br>
+        <br>
+            <br>
+        <br>
+    <br>
+<br>
+{% if object_list %}
+<table border="1" style="background-color:#FFFCF2; border-color:#403D39; color:#252422" >
+    <tr>
+        <th>ID</th>
+        <th>Date</th>
+        <th>Name</th>
+        <th>Phone</th>
+    </tr>
+{% for obj in object_list %}
+    <tr>
+        <th>{{ obj.id }}</th>
+        <th>{{ obj.order_dt }}</th>
+        <th>{{ obj.order_name }}</th>
+        <th>{{ obj.order_phone }}</th>
+    </tr>
+{% endfor %}
+</table>
+{% else %}
+<h2>Empty Data</h2>
+{% endif %}
+
+</body>
+</html>
