@@ -35,6 +35,8 @@ INSTALLED_APPS = [
     'admin_interface',
     'colorfield',
 
+    'price.apps.PriceConfig',
+    'cms.apps.CmsConfig',
     'crm.apps.CrmConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -126,6 +128,12 @@ ROOT_PATH = os.path.dirname(__file__)
 STATICFILES_DIRS = [(os.path.join(ROOT_PATH, 'static'))]
 
 STATIC_URL = '/static/'
+SITE_ID = 1
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+
+MEDIA_URL = '/img/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'img')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/dev/ref/settings/#default-auto-field
