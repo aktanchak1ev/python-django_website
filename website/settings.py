@@ -31,9 +31,9 @@ ALLOWED_HOSTS = []
 # Application definition
 INSTALLED_APPS = [
 
-    #  custom admin color style
-    'admin_interface',
-    'colorfield',
+    # #  custom admin color style
+    # 'admin_interface',
+    # 'colorfield',
 
     'price.apps.PriceConfig',
     'cms.apps.CmsConfig',
